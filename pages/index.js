@@ -33,12 +33,12 @@ export default function Home() {
       </Head>
       <div >
       <NavBar className=''/>
-      <Container>
+ 
       <Image className='object-cover opacity-50'
       fill
       src="/../public/images/HomePageBackground.jpg"
     />
-     </Container>
+   
 </div>
     </>
   )

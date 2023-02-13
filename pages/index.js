@@ -38,7 +38,17 @@ export default function Home() {
       fill
       src="/../public/images/HomePageBackground.jpg"
     />
-   
+   sk lsjlksj dfgsdfg
+   sdf
+   g 
+   sdfg 
+   sd
+   fg 
+   sd
+   fg 
+   sdf
+   g 
+   sdfg 
 </div>
     </>
   )

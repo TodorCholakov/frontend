@@ -1,7 +1,7 @@
 
 const gallery = () => {
   return (
-    <div>gallerz sdfy</div>
+    <div>gallerz sdfasdf adsasdf</div>
   )
 }
 

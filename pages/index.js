@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { PRODUCT_QUERY } from "../lib/query"
-import Product from '../components/Product'
+
 import { useQuery } from 'urql'
 import NavBar from '@/components/NavBar'
 
@@ -22,7 +22,7 @@ export default function Home() {
     return <p>error o no {error.message}</p>
   }
   console.log (results)
-  const products = data.products.data
+
   return (
     <>
       <Head>

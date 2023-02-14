@@ -21,8 +21,7 @@ export default function Home() {
   if(error) {
     return <p>error o no {error.message}</p>
   }
-  console.log (results)
-
+  const products = data.products.data
   return (
     <>
       <Head>
@@ -39,6 +38,8 @@ export default function Home() {
       src="/../public/images/HomePageBackground.jpg"
     />
    sk lsjlksj dfgsdfg
+    {products.map((product)=> <p>{product.attributes.title}</p>)}
+  
    sdf
    g 
    sdfg 

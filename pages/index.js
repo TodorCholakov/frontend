@@ -38,7 +38,7 @@ export default function Home() {
       src="/../public/images/HomePageBackground.jpg"
     />
    sk lsjlksj dfgsdfg
-    {products.map((product)=> <p>{product.attributes.title} aaaaaaaaaaaaaaaa</p>)}
+    {products.map((product)=> <p>{product.attributes.title} <img src={product.attributes.image.data.attributes.formats.small.url} />aaaaaaaaaaaaaaaa </p>)}
   
    sdf
    g 

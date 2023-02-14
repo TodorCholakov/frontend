@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import background from 'public/images/HomePageBackground.jpg'
 import { Inter } from '@next/font/google'
 import { PRODUCT_QUERY } from "../lib/query"
 
@@ -35,10 +36,11 @@ export default function Home() {
  
       <Image className='object-cover opacity-50'
       fill
-      src="/../public/images/HomePageBackground.jpg"
+      src={background}
     />
    sk lsjlksj dfgsdfg
-    {products.map((product)=> <p>{product.attributes.title} <img src={product.attributes.image.data.attributes.formats.small.url} />aaaaaaaaaaaaaaaa </p>)}
+    {products.map((product)=> <p>{product.attributes.title} 
+    <img src={product.attributes.image.data.attributes.formats.small.url} />aaaaaaaaaaaaaaaa </p>)}
   
    sdf
    g 

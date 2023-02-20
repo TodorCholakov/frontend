@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image'
 import background from 'public/images/HomePageBackground.jpg'
 import styled from 'styled-components'
@@ -24,13 +25,14 @@ export default function Home() {
   return (
     
        <Wrapper >
+         <NavBar />
                <Image className='object-cover z-0 '
       fill
       src={background}
     />
         <SubWrapper>
  
-       <NavBar />
+      
     
    </SubWrapper>
     <GalleryItemsWrpper

@@ -37,7 +37,7 @@ const NavWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width:100vw;
-
+  position: fixed;
   @media (max-width: 768px) {
     transition: 500ms;
     transition-timing-function: ease-in;
@@ -49,6 +49,7 @@ const NavWrapper = styled.div`
       z-index: 9999;
       transition: 500ms;
       height: 260px;
+      
     }
   }
 `;

@@ -22,17 +22,19 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper>
-       <Image  className='object-cover z-0 'fill src={PhotographyBackground} />
-    <SubWrapper>
-       <NavBar />
-    </SubWrapper>
-
-  <div variants={moveRight1} initial="hidden" animate="show" className="flex justify-center flex-row content-center" >  
+    <Wrapper  >
+      <NavBar />
+      <Image className='object-cover z-0 '
+      fill
+      src={PhotographyBackground}
+    />
+  
+   
+  <ContainerA variants={moveRight1} initial="hidden" animate="show"  >  
 
 
       <Link href={`/wildlife-gallery`}>
-      <Card sx={{ maxWidth: 345 }} className="m-5">
+      <Card sx={{ maxWidth: 345, m: 0.5 }}>
       <CardActionArea style={{backgroundColor: "white"}}>
       <Image src={HeaderPageImage1}  />
         <CardContent>
@@ -49,7 +51,7 @@ const GalleryPage = () => {
 
 
     <Link href={`/wildlife-gallery`}>
-    <Card sx={{ maxWidth: 345 }} className="m-5">
+    <Card sx={{ maxWidth: 345, m: 0.5 }} >
       <CardActionArea style={{backgroundColor: "white"}}>
       <Image src={TheMountain}  />
         <CardContent>
@@ -63,7 +65,7 @@ const GalleryPage = () => {
     
 
        <Link href={`/air-gallery`}>
-    <Card sx={{ maxWidth: 345 }} className="m-5">
+    <Card sx={{ maxWidth: 345, m: 0.5}} >
       <CardActionArea style={{backgroundColor: "white"}}>
       <Image src={Air}  />
         <CardContent>
@@ -76,11 +78,31 @@ const GalleryPage = () => {
     </Link>  
     
 
-   </div>
+   </ContainerA>
     </Wrapper>
   );
 };
-
+const ContainerA = styled.div`
+  margin: 0;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width:100vw;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  @media (max-width: 1050px) {
+  flex-direction: column;
+  width:90vw;
+  position:relative;
+  margin:0 auto;
+  height:auto;
+  margin-top:60px;
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  }
+`
 const HR = styled.div`
   border-bottom: 1px solid gray;
   margin: 3px;
@@ -108,74 +130,17 @@ const SubTitle = styled(motion.p)`
 const SubWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: 768px) {
-    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    margin: 0 auto;
-  }
-`;
-const ImageInContainer = styled.img`
-  object-fit: cover;
-  max-width: 100%;
 
-  @media (max-width: 768px) {
-    margin-top: 0px;
-    height: 200px;
-  }
-`;
-const ImageInContainer1 = styled.img`
-  object-fit: cover;
-  max-width: 100%;
-
-  @media (max-width: 768px) {
-    margin-top: 0px;
-    height: 200px;
-  }
 `;
 
-const AboutMeContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  width: 30vw;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
-  color: black;
-  font-weight: 300;
-  letter-spacing: 1px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #ffffff;
-  transition: 500ms;
-  opacity: 0.97;
-  height: 450px;
-  cursor: zoom-in;
-  &:hover {
-    transition: 500ms;
-    -webkit-box-shadow: -6px 7px 19px -4px #000000;
-    box-shadow: -6px 7px 19px -4px #000000;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-  }
-  @media (max-width: 768px) {
-    width: 90vw;
-    height: auto;
-    padding-bottom: 10px;
-    border: 1px solid gray;
-  }
-`;
 
 const Wrapper = styled.div`
-  display: flex;
+ display: flex;
   flex-direction: column;
   height: 100vh;
-  @media (max-width: 768px) {
-    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    margin: 0 auto;
+  @media (max-width: 1060px) {
+    height:auto;
+    position: relative;
   }
 `;
 

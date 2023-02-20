@@ -24,7 +24,7 @@ const AirGallery = () => {
   if(error) {
     return <p>error o no {error.message}</p>
   }
-  const products = data.products.data
+  const products = data.AirGalleryPhoto.data
 
   let settings = {
     columnCount:{

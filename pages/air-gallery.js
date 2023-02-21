@@ -9,7 +9,7 @@ import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query"
 import React, { Component } from 'react'
-import PhotoAlbum from "react-photo-album";
+import Gallery from 'react-photo-gallery-next';
 
 
 
@@ -26,22 +26,18 @@ const AirGallery = () => {
     return <p>error o no {error.message}</p>
   }
   const products = data.airGalleryPhotos.data
+console.log (products)
+ let arr = []
 
-  let settings = {
-    columnCount:{
-      default:5,
-      mobile:3,
-      tab:4
-    },
-    mode: 'dark'
-  }
+ products.map((product)=>arr.push({"width":product.attributes.width, "height":product.attributes.height, "src":product.attributes.image.data.attributes.formats.small.url}))
+ console.log (arr)
   return (
     <Wrapper>
       <NavBar />
 
       <div className="h-3/6 bg-cover w-screen overflow-hidden z-0">
       <Image
-  
+        alt = "asd"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -72,7 +68,7 @@ const AirGallery = () => {
         <Link href="/mountain-gallery">Mountain</Link>
       </SubTitle1>
 
-      <PhotoAlbum layout="rows" photos={products} />;
+      <Gallery photos={arr} />;
       <Footer />
     </Wrapper>
   );

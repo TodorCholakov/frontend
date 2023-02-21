@@ -8,8 +8,7 @@ import NavBar from "../components/NavBar"
 import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query"
-import React, { Component } from 'react'
-import Gallery from 'react-photo-gallery';
+
 
 
 
@@ -68,7 +67,7 @@ asdf
         <Link href="/mountain-gallery">Mountain</Link>
       </SubTitle1>ASDGIT INIT
 asdf
-      <Gallery photos={arr} />;
+ 
       <Footer />
     </Wrapper>
   );

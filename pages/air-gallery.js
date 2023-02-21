@@ -66,7 +66,7 @@ console.log (products)
       >
         <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/mountain-gallery">Mountain</Link>
-      </SubTitle1>
+      </SubTitle1>ASD
 
       <Gallery photos={arr} />;
       <Footer />

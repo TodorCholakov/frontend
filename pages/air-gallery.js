@@ -9,7 +9,7 @@ import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query"
 import React, { Component } from 'react'
-import Gallery from 'react-photo-gallery-next';
+import Gallery from 'react-photo-gallery';
 
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import { BsInstagram } from "react-icons/bs";
 
@@ -12,9 +12,9 @@ const Nav = () => {
     <NavWrapper>
       <UlList onMouseOver={Hover}>
         <ListElement>
-          <a href="https://www.instagram.com/todorscholakov/" target="_blank">
+          <Link href="https://www.instagram.com/todorscholakov/" target="_blank">
             <BsInstagram />
-          </a>
+          </Link>
         </ListElement>
       </UlList>
       <Image src={AirGalleryImg} />

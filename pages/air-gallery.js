@@ -9,13 +9,14 @@ import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query"
 import React, { Component } from 'react'
-import Lightroom from 'react-lightbox-gallery'
+import PhotoAlbum from "react-photo-album";
 
 
 
 const AirGallery = () => {
   //fetch 
   const [results] = useQuery({query:AIR_QUERY})
+  console.log (results)
   const {data, fetching, error} = results
   
   if(fetching) {
@@ -24,7 +25,7 @@ const AirGallery = () => {
   if(error) {
     return <p>error o no {error.message}</p>
   }
-  const products = data.AirGalleryPhoto.data
+  const products = data.airGalleryPhotos.data
 
   let settings = {
     columnCount:{
@@ -71,7 +72,7 @@ const AirGallery = () => {
         <Link href="/mountain-gallery">Mountain</Link>
       </SubTitle1>
 
-      <Lightroom images={images} settings={settings} />
+      <PhotoAlbum layout="rows" photos={products} />;
       <Footer />
     </Wrapper>
   );

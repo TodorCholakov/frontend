@@ -66,8 +66,8 @@ console.log (products)
       >
         <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/mountain-gallery">Mountain</Link>
-      </SubTitle1>ASD
-
+      </SubTitle1>ASDGIT INIT
+asdf
       <Gallery photos={arr} />;
       <Footer />
     </Wrapper>

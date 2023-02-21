@@ -34,7 +34,7 @@ console.log (products)
   return (
     <Wrapper>
       <NavBar />
-
+asdf
       <div className="h-3/6 bg-cover w-screen overflow-hidden z-0">
       <Image
         alt = "asd"

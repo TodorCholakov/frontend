@@ -8,7 +8,7 @@ import NavBar from "../components/NavBar"
 import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query";
-
+import { PhotoAlbum } from 'react-photo-album';
 
 
 const AirGallery = () => {
@@ -70,7 +70,7 @@ asdf
       <PhotoAlbum layout="rows" photos={arr} />
       <Footer />
     </Wrapper>
-  );
+  );gi
 };
 
 const Title = styled(motion.h2)`

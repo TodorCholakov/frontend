@@ -64,8 +64,8 @@ asdf
       >
         <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/mountain-gallery">Mountain</Link>
-      git daf;asdfk ;alkdf a;ldfk a;sf ;asf a';sldfk afkafk
-      </SubTitle1>ASDGIT INITa a;sldfk fk'fka's;fk a';sfk a';sk l
+     
+      </SubTitle1>Subtitle
    
  
       <Footer />

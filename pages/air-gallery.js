@@ -1,4 +1,5 @@
 
+import react, {useState} from "react"
 import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import Image from "next/image";
 import { useQuery } from 'urql'
@@ -9,10 +10,18 @@ import Link from "next/link";
 import Footer from "../components/Footer"
 import { AIR_QUERY } from "../lib/query";
 import { PhotoAlbum } from 'react-photo-album';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 
 const AirGallery = () => {
   //fetch 
+  const [index, setIndex] = useState(-1);
   const [results] = useQuery({query:AIR_QUERY})
   console.log (results)
   const {data, fetching, error} = results
@@ -29,6 +38,12 @@ console.log (products)
 
  products.map((product)=>arr.push({"width":product.attributes.width, "height":product.attributes.height, "src":product.attributes.image.data.attributes.formats.small.url}))
  console.log (arr)
+ const slides = arr.map(({ src, width, height }) => ({
+  src,
+  width,
+  height,
+  
+}));
   return (
     <Wrapper>
       <NavBar />
@@ -67,7 +82,15 @@ asdf
      
       </SubTitle1>Subtitle
    
-      <PhotoAlbum layout="rows" photos={arr} />
+      <PhotoAlbum layout="rows" photos={slides}  targetRowHeight={150} onClick={({ index }) => setIndex(index)}/>
+      <Lightbox
+                slides={slides}
+                open={index >= 0}
+                index={index}
+                close={() => setIndex(-1)}
+                // enable optional lightbox plugins
+                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+            />
       <Footer />
     </Wrapper>
   );gi

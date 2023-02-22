@@ -22,7 +22,8 @@
     "react-icons": "^4.7.1",
     "react-photo-album": "^2.0.2",
     "styled-components": "^5.3.6",
-    "urql": "^3.0.3"
+    "urql": "^3.0.3",
+    "yet-another-react-lightbox": "^2.4.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

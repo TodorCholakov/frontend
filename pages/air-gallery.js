@@ -67,7 +67,7 @@ asdf
      
       </SubTitle1>Subtitle
    
- 
+      <PhotoAlbum layout="rows" photos={arr} />
       <Footer />
     </Wrapper>
   );

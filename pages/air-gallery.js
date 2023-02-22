@@ -65,9 +65,9 @@ asdf
       >
         <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/mountain-gallery">Mountain</Link>
-        <Gallery photos={arr} />git
-      </SubTitle1>ASDGIT INIT
-      
+        <Gallery photos={arr} />git daf;asdfk ;alkdf a;ldfk a;sf ;asf a';sldfk afkafk
+      </SubTitle1>ASDGIT INITa a;sldfk fk'fka's;fk a';sfk a';sk l
+      <Gallery photos={arr} />
  
       <Footer />
     </Wrapper>

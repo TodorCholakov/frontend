@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 import NavBar from "../components/NavBar"
 import Link from "next/link";
 import Footer from "../components/Footer"
-import { AIR_QUERY } from "../lib/query"
-import Gallery from 'react-photo-gallery';
+import { AIR_QUERY } from "../lib/query";
 
 
 
@@ -65,9 +64,9 @@ asdf
       >
         <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/mountain-gallery">Mountain</Link>
-        <Gallery photos={arr} />git daf;asdfk ;alkdf a;ldfk a;sf ;asf a';sldfk afkafk
+      git daf;asdfk ;alkdf a;ldfk a;sf ;asf a';sldfk afkafk
       </SubTitle1>ASDGIT INITa a;sldfk fk'fka's;fk a';sfk a';sk l
-      <Gallery photos={arr} />
+   
  
       <Footer />
     </Wrapper>

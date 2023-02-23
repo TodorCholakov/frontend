@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import { BsInstagram } from "react-icons/bs";
-
+import Image from "next/image";
 
 const Nav = () => {
   const Hover = () => {};
@@ -17,21 +17,15 @@ const Nav = () => {
           </Link>
         </ListElement>
       </UlList>
-      <Image src={AirGalleryImg} />
+      <Image className="z-40 w-screen flex " href={AirGalleryImg} />
     </NavWrapper>
   );
 };
-const Image = styled.img`
-  display: flex;
-  object-fit: cover;
-  width: 100%;
-  height: 40px;
-  margin-top: -40px;
-`;
+
 const NavWrapper = styled.div`
   z-index: 9999;
-  position: relative;
-  margin-top: 20px;
+  position: fixed;
+  bottom:0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -41,9 +35,8 @@ const ListElement = styled.li`
   display: flex;
   color: #fff;
   fill: #fff;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding-top:5px;
+  padding-right: 20px;
   padding-bottom: 5px;
   font-size: 16px;
   font-weight: 300;
@@ -57,7 +50,7 @@ const UlList = styled.ul`
   background-color: black;
   width: 100vw;
   opacity: 0.7;
-  height: 40px;
+  height: 30px;
   font-family: "Montserrat", sans-serif;
   justify-content: right;
 

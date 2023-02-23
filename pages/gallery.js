@@ -50,7 +50,7 @@ const GalleryPage = () => {
 </Link>
 
 
-    <Link href={`/wildlife-gallery`}>
+    <Link href={`/mountain-gallery`}>
     <Card sx={{ maxWidth: 345, m: 0.5 }} >
       <CardActionArea style={{backgroundColor: "white"}}>
       <Image src={TheMountain}  />

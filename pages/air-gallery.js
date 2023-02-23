@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-
 import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import Image from "next/image";
 import { useQuery } from 'urql'
@@ -50,7 +49,6 @@ console.log (products[0].attributes.image.data.attributes.formats.medium.height)
   return (
     <Wrapper>
       <NavBar />
-asdf
       <div className="h-3/6 bg-cover w-screen overflow-hidden z-0">
       <Image
         alt = "asd"
@@ -101,7 +99,7 @@ asdf
             />
       <Footer />
     </Wrapper>
-  );gi
+  )
 };
 
 const Title = styled(motion.h2)`

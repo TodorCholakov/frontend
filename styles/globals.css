@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&family=Montserrat:wght@100;200&display=swap');
+@import "yet-another-react-lightbox/styles.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

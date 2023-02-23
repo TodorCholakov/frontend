@@ -1,5 +1,6 @@
 
-import react, {useState} from "react"
+import { useState } from "react";
+
 import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import Image from "next/image";
 import { useQuery } from 'urql'
@@ -33,10 +34,11 @@ const AirGallery = () => {
     return <p>error o no {error.message}</p>
   }
   const products = data.airGalleryPhotos.data
-console.log (products)
+  console.log (products)
+console.log (products[0].attributes.image.data.attributes.formats.medium.height)
  let arr = []
 
- products.map((product)=>arr.push({"width":product.attributes.width, "height":product.attributes.height, "src":product.attributes.image.data.attributes.formats.small.url}))
+ products.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.medium.width, "height":product.attributes.image.data.attributes.formats.medium.height, "src":product.attributes.image.data.attributes.formats.small.url}))
  console.log (arr)
  const slides = arr.map(({ src, width, height }) => ({
   src,
@@ -44,6 +46,7 @@ console.log (products)
   height,
   
 }));
+
   return (
     <Wrapper>
       <NavBar />
@@ -82,7 +85,12 @@ asdf
      
       </SubTitle1>Subtitle
    
-      <PhotoAlbum layout="rows" photos={slides}  targetRowHeight={150} onClick={({ index }) => setIndex(index)}/>
+      <PhotoAlbum  layout="masonry"
+      spacing={2}
+      
+        photos={slides}
+        targetRowHeight={150}
+        onClick={({ index }) => setIndex(index)}/>
       <Lightbox
                 slides={slides}
                 open={index >= 0}

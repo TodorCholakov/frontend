@@ -13,31 +13,24 @@ import { CardActionArea } from '@mui/material';
 import NavBar from "../components/NavBar"
 
 const GalleryPage = () => {
-  const moveRight1 = {
-    hidden: { x: -1500 },
-    show: {
-      x: 0,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
-
+ 
   return (
-    <Wrapper  >
+    <Wrapper   initial={{ opacity: 0 }}
+    animate={{ opacity: 1, delay: 1 }}>
       <NavBar />
       <Image className='object-cover z-0 '
       fill
       src={PhotographyBackground}
+     
     />
   
    
-  <ContainerA variants={moveRight1} initial="hidden" animate="show"  >  
-
-
+  <ContainerA >  
       <Link href={`/wildlife-gallery`}>
-      <Card sx={{ maxWidth: 345, m: 0.5 }}>
+      <Card sx={{ maxWidth: 345, m: 0.5 }} >
       <CardActionArea style={{backgroundColor: "white"}}>
       <Image src={HeaderPageImage1}  />
-        <CardContent>
+        <CardContent >
         <Title>WILDLIFE</Title>
         <HR />
             <SubTitle>
@@ -134,7 +127,7 @@ const SubWrapper = styled.div`
 `;
 
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
  display: flex;
   flex-direction: column;
   height: 100vh;

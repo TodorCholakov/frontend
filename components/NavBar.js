@@ -89,7 +89,7 @@ const UlList = styled.ul`
   opacity: 0.7;
   font-family: 'Montserrat', sans-serif;
   justify-content: right;
-
+  padding-right:10px;
   @media (max-width: 768px) {
     flex-direction: column;
     opacity: 1;

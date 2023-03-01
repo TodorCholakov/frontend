@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
 import { BsInstagram } from "react-icons/bs";
-import Image from "next/image";
+
 
 const Nav = () => {
   const Hover = () => {};
@@ -17,7 +16,6 @@ const Nav = () => {
           </Link>
         </ListElement>
       </UlList>
-      <Image className="z-40 w-screen flex " href={AirGalleryImg} />
     </NavWrapper>
   );
 };

@@ -34,10 +34,13 @@ const AirGallery = () => {
   }
   const products = data.mountainGalleryPhotos.data
   console.log (products)
-console.log (products[0].attributes.image.data.attributes.formats.medium.height)
+console.log (products[0].attributes.image.data.attributes.formats.large.height)
  let arr = []
 
- products.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.medium.width, "height":product.attributes.image.data.attributes.formats.medium.height, "src":product.attributes.image.data.attributes.formats.small.url}))
+ products.map((product)=>arr.push({
+  "width":product.attributes.image.data.attributes.formats.large.width, 
+  "height":product.attributes.image.data.attributes.formats.large.height, 
+  "src":product.attributes.image.data.attributes.formats.large.url}))
  console.log (arr)
  const slides = arr.map(({ src, width, height }) => ({
   src,

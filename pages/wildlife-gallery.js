@@ -35,7 +35,7 @@ const WildlifeGallery = () => {
 
   console.log (resultsWildlife)
   const itemsWildlife = data.wildlifePhotoGalleries.data
-
+  console.log (itemsWildlife)
  let arr = []
 
  itemsWildlife.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.large.width, "height":product.attributes.image.data.attributes.formats.large.height, "src":product.attributes.image.data.attributes.formats.large.url}))

@@ -33,10 +33,10 @@ const AirGallery = () => {
   }
   const itemsAir = data.airGalleryPhotos.data
   console.log (itemsAir)
-console.log (itemsAir[0].attributes.image.data.attributes.formats.medium.height)
+console.log (itemsAir[0].attributes.image.data.attributes.formats.large.height)
  let arr = []
 
- itemsAir.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.medium.width, "height":product.attributes.image.data.attributes.formats.medium.height, "src":product.attributes.image.data.attributes.formats.small.url}))
+ itemsAir.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.large.width, "height":product.attributes.image.data.attributes.formats.large.height, "src":product.attributes.image.data.attributes.formats.small.url}))
  console.log (arr)
  const slides = arr.map(({ src, width, height }) => ({
   src,

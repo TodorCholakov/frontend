@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import AirGalleryImg from 'public/images/GalleryPage/BackgroundAir1600.webp'
+import WildlifeHeader from 'public/images/GalleryPage/WildlifeHeader_1920_350.webp'
 import Image from "next/image";
 import { useQuery } from 'urql'
 import styled from "styled-components";
@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import NavBar from "../components/NavBar"
 import Link from "next/link";
 import Footer from "../components/Footer"
-import { AIR_QUERY } from "../lib/query";
+import { WILDLIFE_QUERY } from "../lib/wildlifeGalleryQuery";
 import { PhotoAlbum } from 'react-photo-album';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -19,25 +19,27 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 
-const AirGallery = () => {
+const WildlifeGallery = () => {
   //fetch 
   const [index, setIndex] = useState(-1);
-  const [results] = useQuery({query:AIR_QUERY})
-  console.log (results)
-  const {data, fetching, error} = results
+  const [resultsWildlife] = useQuery({query:WILDLIFE_QUERY})
+
+  const {data, fetching, error} = resultsWildlife
   
   if(fetching) {
     return <p>loading</p>
-  }
+ }
   if(error) {
     return <p>error o no {error.message}</p>
   }
-  const products = data.airGalleryPhotos.data
-  console.log (products)
-console.log (products[0].attributes.image.data.attributes.formats.medium.height)
+
+  console.log (resultsWildlife)
+  const itemsWildlife = data.wildlifePhotoGalleries.data
+
+console.log (itemsWildlife[0].attributes.image.data.attributes.formats.medium.height)
  let arr = []
 
- products.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.medium.width, "height":product.attributes.image.data.attributes.formats.medium.height, "src":product.attributes.image.data.attributes.formats.small.url}))
+ itemsWildlife.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.medium.width, "height":product.attributes.image.data.attributes.formats.medium.height, "src":product.attributes.image.data.attributes.formats.small.url}))
  console.log (arr)
  const slides = arr.map(({ src, width, height }) => ({
   src,
@@ -49,29 +51,29 @@ console.log (products[0].attributes.image.data.attributes.formats.medium.height)
   return (
     <Wrapper>
       <NavBar />
-      <div className="h-3/6 bg-cover w-screen overflow-hidden z-0">
+     
       <Image
-        alt = "asd"
+        alt = "wildlife-image"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.1 }}
         cover
-        src={AirGalleryImg}
+        src={WildlifeHeader}
       />
-</div>
+
       <Title
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.1 }}
       >
-        Nature
+        Wildlife
       </Title>
       <SubTitle
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.1 }}
       >
-        Fly high to feel the silence
+        Hidden deep into the mountain, out of sight, they live an amazing life
       </SubTitle>
       <SubTitle1
         initial={{ opacity: 0 }}
@@ -81,7 +83,7 @@ console.log (products[0].attributes.image.data.attributes.formats.medium.height)
         <Link href="/mountain-gallery">The mountain</Link>|
         <Link href="/air-gallery">Air</Link>
      
-      </SubTitle1>Subtitle
+      </SubTitle1>
    
       <PhotoAlbum  layout="masonry"
       spacing={2}
@@ -144,4 +146,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default AirGallery;
+export default WildlifeGallery;

@@ -50,7 +50,7 @@ const GalleryPage = () => {
         <CardContent>
         <Title>THE MOUNTAIN</Title>
             <HR />
-            <SubTitle>The higher in mountain, the lighter is soul</SubTitle>
+            <SubTitle>The higher the mountain, the lighter is soul</SubTitle>
         </CardContent>
       </CardActionArea>
     </Card>

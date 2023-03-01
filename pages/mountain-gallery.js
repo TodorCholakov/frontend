@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import NavBar from "../components/NavBar"
 import Link from "next/link";
 import Footer from "../components/Footer"
-import { AIR_QUERY } from "../lib/query";
+import { MOUNTAIN_QUERY } from "../lib/mountainGalleryQuery";
 import { PhotoAlbum } from 'react-photo-album';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -22,17 +22,17 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 const AirGallery = () => {
   //fetch 
   const [index, setIndex] = useState(-1);
-  const [results] = useQuery({query:AIR_QUERY})
+  const [results] = useQuery({query:MOUNTAIN_QUERY})
   console.log (results)
   const {data, fetching, error} = results
   
-  if(fetching) {
-    return <p>loading</p>
-  }
-  if(error) {
+ if(fetching) {
+   return <p></p>
+ }
+ if(error) {
     return <p>error o no {error.message}</p>
   }
-  const products = data.airGalleryPhotos.data
+  const products = data.mountainGalleryPhotos.data
   console.log (products)
 console.log (products[0].attributes.image.data.attributes.formats.medium.height)
  let arr = []
@@ -49,7 +49,6 @@ console.log (products[0].attributes.image.data.attributes.formats.medium.height)
   return (
     <Wrapper>
       <NavBar />
-      
       <Image
       className = "-mt-10"
         alt = "mlointain-image"
@@ -72,7 +71,7 @@ console.log (products[0].attributes.image.data.attributes.formats.medium.height)
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-       The higher the mountain, the lighter is soul
+      The higher the mountain, the lighter is soul
       </SubTitle>
       <SubTitle1
         initial={{ opacity: 0 }}

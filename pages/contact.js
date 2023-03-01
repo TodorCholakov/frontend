@@ -180,14 +180,14 @@ const Title = styled(motion.h2)`
 
 
 const ContactWrapper = styled(motion.div)`
-  margin-top: -80vh;
   display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  margin-top: -80vh;
   a {
     text-decoration: none;
-  }
-  @media (max-width: 768px) {
-    margin-top: 0px;
   }
 `;
 const AboutMeContainer = styled(motion.div)`

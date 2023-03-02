@@ -27,10 +27,10 @@ const WildlifeGallery = () => {
   const {data, fetching, error} = resultsWildlife
   
   if(fetching) {
-    return <p>loading</p>
+    return <p></p>
  }
   if(error) {
-    return <p>error o no {error.message}</p>
+    return <p>Error, we've problems loading the site {error.message}</p>
   }
 
   console.log (resultsWildlife)

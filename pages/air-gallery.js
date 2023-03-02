@@ -29,7 +29,7 @@ const AirGallery = () => {
   return <p></p>
   }
   if(error) {
-   return <p>error o no {error.message}</p>
+    return <p>Error, we've problems loading the site {error.message}</p>
   }
   const itemsAir = data.airGalleryPhotos.data
   console.log (itemsAir)

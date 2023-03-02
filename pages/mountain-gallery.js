@@ -30,7 +30,7 @@ const AirGallery = () => {
    return <p></p>
  }
  if(error) {
-    return <p>error o no {error.message}</p>
+  return <p>Error, we've problems loading the site {error.message}</p>
   }
   const products = data.mountainGalleryPhotos.data
   console.log (products)
@@ -81,7 +81,7 @@ console.log (products[0].attributes.image.data.attributes.formats.large.height)
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        <Link href="/wildlife-gallery">Wildlige</Link>|
+        <Link href="/wildlife-gallery">Wildlife</Link>|
         <Link href="/air-gallery">Air</Link>
       
       </SubTitle1>

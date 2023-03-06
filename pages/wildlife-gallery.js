@@ -138,7 +138,6 @@ const SubTitle1 = styled(motion.p)`
 const Wrapper = styled.div`
  display: flex;
   flex-direction: column;
-  height: 100vh;
   @media (max-width: 1060px) {
     height:auto;
     position: relative;

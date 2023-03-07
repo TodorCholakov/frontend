@@ -17,13 +17,18 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 const WildlifeGallery = () => {
   //fetch 
   const [index, setIndex] = useState(-1);
   const [resultsWildlife] = useQuery({query:WILDLIFE_QUERY})
-
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   const {data, fetching, error} = resultsWildlife
   
   if(fetching) {
@@ -47,6 +52,10 @@ const WildlifeGallery = () => {
   
 }));
 
+const currentSlides = slides.slice((page-1)*10, (page-1)*10+10)
+const paginatedPagesNum = Math.ceil(slides.length/10)
+
+console.log (page)
   return (
     <Wrapper>
       <NavBar />
@@ -87,17 +96,21 @@ const WildlifeGallery = () => {
       <PhotoAlbum  layout="masonry"
       spacing={2}
       
-        photos={slides}
+        photos={currentSlides}
         targetRowHeight={150}
         onClick={({ index }) => setIndex(index)}/>
       <Lightbox
-                slides={slides}
+                slides={currentSlides}
                 open={index >= 0}
                 index={index}
                 close={() => setIndex(-1)}
                 // enable optional lightbox plugins
                 plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
             />
+            <Stack spacing={2} >
+            <Typography className={"mt-4 flex justify-center"}>Page: {page}</Typography>
+      <Pagination   className={"mt-4 flex justify-center"} count={paginatedPagesNum} page={page} onChange={handleChange} />
+    </Stack>
       <Footer />
     </Wrapper>
   )

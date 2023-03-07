@@ -52,7 +52,7 @@ const WildlifeGallery = () => {
   
 }));
 
-const currentSlides = slides.slice((page-1)*10, (page-1)*10+10)
+const currentSlides = slides.slice((page-1)*20, (page-1)*20+20)
 const paginatedPagesNum = Math.ceil(slides.length/10)
 
 console.log (page)
@@ -108,8 +108,7 @@ console.log (page)
                 plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
             />
             <Stack spacing={2} >
-            <Typography className={"mt-4 flex justify-center"}>Page: {page}</Typography>
-      <Pagination   className={"mt-4 flex justify-center"} count={paginatedPagesNum} page={page} onChange={handleChange} />
+            <Pagination   className={"mt-4 flex justify-center"} count={paginatedPagesNum} page={page} onChange={handleChange} />
     </Stack>
       <Footer />
     </Wrapper>

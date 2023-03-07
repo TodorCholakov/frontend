@@ -24,6 +24,7 @@ const NavWrapper = styled.div`
   z-index: 9999;
   width:100vw;
   display: flex;
+  margin-top:10px;
   flex-direction: column;
   justify-content: space-between;
 `;
@@ -44,7 +45,6 @@ const UlList = styled.ul`
   align-items: center;
   color: #ffffff;
   background-color: black;
-  width: 100vw;
   opacity: 0.7;
   height: 30px;
   font-family: "Montserrat", sans-serif;

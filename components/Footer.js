@@ -22,6 +22,7 @@ const Nav = () => {
 
 const NavWrapper = styled.div`
   z-index: 9999;
+  width:100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

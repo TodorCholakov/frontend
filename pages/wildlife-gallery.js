@@ -100,7 +100,7 @@ console.log (page)
         targetRowHeight={150}
         onClick={({ index }) => setIndex(index)}/>
       <Lightbox
-                slides={slides}
+                slides={currentSlides}
                 open={index >= 0}
                 index={index}
                 close={() => setIndex(-1)}

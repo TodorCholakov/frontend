@@ -17,14 +17,18 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 const AirGallery = () => {
   //fetch 
   const [index, setIndex] = useState(-1);
   const [results] = useQuery({query:MOUNTAIN_QUERY})
-  console.log (results)
   const {data, fetching, error} = results
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   
  if(fetching) {
    return <p></p>
@@ -48,7 +52,8 @@ console.log (products[0].attributes.image.data.attributes.formats.large.height)
   height,
   
 }));
-
+const currentSlides = slides.slice((page-1)*30, (page-1)*30+30)
+const paginatedPagesNum = Math.ceil(slides.length/30)
   return (
     <Wrapper>
       <NavBar />
@@ -100,7 +105,9 @@ console.log (products[0].attributes.image.data.attributes.formats.large.height)
                 // enable optional lightbox plugins
                 plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
             />
-           
+           <Stack spacing={2} >
+            <Pagination   className={"mt-4 flex justify-center"} count={paginatedPagesNum} page={page} onChange={handleChange} />
+    </Stack>
            <Footer />
     </Wrapper>
   )

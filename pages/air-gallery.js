@@ -17,13 +17,17 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 const AirGallery = () => {
   //fetch 
   const [index, setIndex] = useState(-1);
   const [resultsAir] = useQuery({query:AIR_QUERY})
-  console.log (resultsAir)
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   const {data, fetching, error} = resultsAir
   if(fetching) {
   return <p></p>
@@ -32,8 +36,6 @@ const AirGallery = () => {
     return <p>Error, we've problems loading the site {error.message}</p>
   }
   const itemsAir = data.airGalleryPhotos.data
-  console.log (itemsAir)
-console.log (itemsAir[0].attributes.image.data.attributes.formats.large.height)
  let arr = []
 
  itemsAir.map((product)=>arr.push({
@@ -48,6 +50,8 @@ console.log (itemsAir[0].attributes.image.data.attributes.formats.large.height)
   
 }));
 
+const currentSlides = slides.slice((page-1)*30, (page-1)*30+30)
+const paginatedPagesNum = Math.ceil(slides.length/30)
   return (
     <Wrapper>
       <NavBar />
@@ -98,6 +102,9 @@ console.log (itemsAir[0].attributes.image.data.attributes.formats.large.height)
                 // enable optional lightbox plugins
                 plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
             />
+             <Stack spacing={2} >
+            <Pagination   className={"mt-4 flex justify-center"} count={paginatedPagesNum} page={page} onChange={handleChange} />
+    </Stack>
       <Footer />
     </Wrapper>
   )

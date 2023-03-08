@@ -19,7 +19,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+
 
 const WildlifeGallery = () => {
   //fetch 
@@ -37,11 +37,8 @@ const WildlifeGallery = () => {
   if(error) {
     return <p>Error, we've problems loading the site {error.message}</p>
   }
-
-  console.log (resultsWildlife)
   const itemsWildlife = data.wildlifePhotoGalleries.data
-  console.log (itemsWildlife)
- let arr = []
+  let arr = []
 
  itemsWildlife.map((product)=>arr.push({"width":product.attributes.image.data.attributes.formats.large.width, "height":product.attributes.image.data.attributes.formats.large.height, "src":product.attributes.image.data.attributes.formats.large.url}))
  console.log (arr)
@@ -52,10 +49,9 @@ const WildlifeGallery = () => {
   
 }));
 
-const currentSlides = slides.slice((page-1)*20, (page-1)*20+20)
-const paginatedPagesNum = Math.ceil(slides.length/10)
+  const currentSlides = slides.slice((page-1)*30, (page-1)*30+30)
+  const paginatedPagesNum = Math.ceil(slides.length/30)
 
-console.log (page)
   return (
     <Wrapper>
       <NavBar />

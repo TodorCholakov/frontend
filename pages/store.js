@@ -4,13 +4,13 @@ import MountainGallery1 from "../public/images/storeBackground.webp"
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar"
+import Nav from "../components/Nav"
 import Link from "next/link";
 
 const MountainGallery = () => {
   return (
     <Wrapper>
-      <NavBar />
+      <Nav />
 
       <Image
         initial={{ opacity: 0 }}

@@ -10,14 +10,14 @@ import Link from "next/link";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
-import NavBar from "../components/NavBar"
+import Nav from "../components/Nav"
 
 const GalleryPage = () => {
  
   return (
     <Wrapper   initial={{ opacity: 0 }}
     animate={{ opacity: 1, delay: 1 }}>
-      <NavBar />
+      <Nav />
       <Image className='object-cover z-0 '
       fill
       src={PhotographyBackground}

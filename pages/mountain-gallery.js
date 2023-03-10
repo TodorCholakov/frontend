@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useQuery } from 'urql'
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar"
+import Nav from "../components/Nav"
 import Link from "next/link";
 import Footer from "../components/Footer"
 import { MOUNTAIN_QUERY } from "../lib/mountainGalleryQuery";
@@ -56,7 +56,7 @@ const currentSlides = slides.slice((page-1)*30, (page-1)*30+30)
 const paginatedPagesNum = Math.ceil(slides.length/30)
   return (
     <Wrapper>
-      <NavBar />
+      <Nav />
       <Image
       className = "-mt-10"
         alt = "mlointain-image"

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import background from 'public/images/HomePageBackground.jpg'
 import { motion } from "framer-motion";
-import NavBar from '@/components/NavBar'
+import Nav from '@/components/Nav'
 
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
   return (
     
        <Wrapper >
-         <NavBar/>
+         <Nav/>
         <Image className='object-cover z-0 '
         fill
         alt="background-image"

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useQuery } from 'urql'
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar"
+import Nav from "../components/Nav"
 import Link from "next/link";
 import Footer from "../components/Footer"
 import { WILDLIFE_QUERY } from "../lib/wildlifeGalleryQuery";
@@ -54,7 +54,7 @@ const WildlifeGallery = () => {
 
   return (
     <Wrapper>
-      <NavBar />
+      <Nav />
      
       <Image
         alt = "wildlife-image"
